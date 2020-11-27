@@ -17,12 +17,6 @@ googleAnalytics = "G-6T32Y0LV39"
     defaultTheme = "auto"
     disableThemeToggle = false
     disableSpecial1stPost = false
-    [[params.socialIcons]]
-        name = "Github"
-        url = "https://github.com/mxseraph"
-    [[params.socialIcons]]
-        name = "Telegram"
-        url = "https://t.me/MxSeraph"
 
 [languages]
     [languages.zh]
