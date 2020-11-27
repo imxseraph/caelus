@@ -4,10 +4,6 @@ defaultContentLanguage = "zh"
 
 googleAnalytics = "G-6T32Y0LV39"
 
-[taxonomies]
-  category = "categories"
-  tag = "tags"
-  
 [minify]
     disableXML = true
     minifyOutput = true
@@ -17,11 +13,19 @@ googleAnalytics = "G-6T32Y0LV39"
     defaultTheme = "auto"
     disableThemeToggle = false
     disableSpecial1stPost = false
+    ShowReadingTime = true
 
 [languages]
     [languages.zh]
         languageName = "Chinese"
         title = "方牧心的博客"
+        [languages.zh.params]
+            description = "这都被你给发现了"
+            author = "方牧心"
+        [languages.zh.params.label]
+            text = "轻语慕心"
+            icon = "/apple-touch-icon.png"
+            iconHeight = 35
         [[languages.zh.menu.main]]
             identifier = "home"
             name = "首页"
@@ -39,6 +43,13 @@ googleAnalytics = "G-6T32Y0LV39"
     [languages.en]
         languageName = "English"
         title = "Muxin Fang's Blog"
+        [languages.en.params]
+            description = "You found something"
+            author = "Muxin Fang"
+        [languages.en.params.label]
+            text = "Whisper from Heart"
+            icon = "/apple-touch-icon.png"
+            iconHeight = 35
         [[languages.en.menu.main]]
             identifier = "home"
             name = "Home"
