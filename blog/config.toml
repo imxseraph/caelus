@@ -1,0 +1,61 @@
+baseURL = "https://blog.muxin.io/"
+theme = "hugo-PaperMod"
+defaultContentLanguage = "zh"
+
+googleAnalytics = "G-6T32Y0LV39"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  
+[minify]
+    disableXML = true
+    minifyOutput = true
+
+[params]
+    env = "production"
+    defaultTheme = "auto"
+    disableThemeToggle = false
+    disableSpecial1stPost = false
+    [[params.socialIcons]]
+        name = "Github"
+        url = "https://github.com/mxseraph"
+    [[params.socialIcons]]
+        name = "Telegram"
+        url = "https://t.me/MxSeraph"
+
+[languages]
+    [languages.zh]
+        languageName = "Chinese"
+        title = "方牧心的博客"
+        [[languages.zh.menu.main]]
+            identifier = "home"
+            name = "首页"
+            url = "https://muxin.io/"
+            weight = -2
+        [[languages.zh.menu.main]]
+            identifier = "blog"
+            name = "博客"
+            url = "/"
+            weight = -1
+        [[languages.zh.menu.main]]
+            identifier = "about"
+            name = "关于我"
+            url = "https://muxin.io/about/"
+    [languages.en]
+        languageName = "English"
+        title = "Muxin Fang's Blog"
+        [[languages.en.menu.main]]
+            identifier = "home"
+            name = "Home"
+            url = "https://muxin.io/en/"
+            weight = -2
+        [[languages.en.menu.main]]
+            identifier = "blog"
+            name = "Blog"
+            url = "/"
+            weight = -1
+        [[languages.en.menu.main]]
+            identifier = "about"
+            name = "About Me"
+            url = "https://muxin.io/en/about/"
