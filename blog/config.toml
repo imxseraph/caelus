@@ -11,6 +11,7 @@ defaultContentLanguage = "zh"
     disableThemeToggle = false
     disableSpecial1stPost = false
     ShowReadingTime = true
+    comments = true
 
 [languages]
     [languages.zh]
@@ -19,6 +20,11 @@ defaultContentLanguage = "zh"
         [languages.zh.params]
             description = "这都被你给发现了"
             author = "方牧心"
+        [languages.zh.params.valine]
+            placeholder = '说点什么吧...'
+            lang = 'zh-CN'
+            viewHolder = '阅读量'
+            countHolder = '载入中...'
         [languages.zh.params.label]
             text = "轻语慕心"
             icon = "/apple-touch-icon.png"
@@ -43,6 +49,11 @@ defaultContentLanguage = "zh"
         [languages.en.params]
             description = "You found something"
             author = "Muxin Fang"
+        [languages.en.params.valine]
+            placeholder = 'Say something...'
+            lang = 'en'
+            viewHolder = 'View Counts'
+            countHolder = 'Loading...'
         [languages.en.params.label]
             text = "Whisper from Heart"
             icon = "/apple-touch-icon.png"

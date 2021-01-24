@@ -1,0 +1,18 @@
+<span id="{{ .RelPermalink }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
+  <span class="post-meta-item-text">{{ .Site.Params.valine.viewHolder }}</span>
+  <span class="leancloud-visitors-count">{{ .Site.Params.valine.countHolder }}</span>
+</span>
+<div id="comments-valine"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+new Valine({
+    el: '#comments-valine',
+    appId: 'W4dhaAk3l0oRYPEiIv7g2qd2-gzGzoHsz',
+    appKey: '24eJDqBvSshiQG5U1aNkUN0H',
+    avatar:'monsterid', 
+    recordIP: true,
+    lang: '{{ .Site.Params.valine.lang }}',
+    placeholder: '{{ .Site.Params.valine.placeholder }}',
+    visitor: true
+})
+</script>
