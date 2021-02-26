@@ -13,3 +13,4 @@ COPY nginx/nginx.conf /etc/nginx/nginx.conf
 COPY nginx/conf.d /etc/nginx/conf.d
 
 COPY --from=alpine /caelus/blog/public/ /data/site/blog.muxin.io/
+COPY --from=alpine /caelus/yourls/ /data/site/fmx.ink/
