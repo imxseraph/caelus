@@ -5,7 +5,7 @@ on:
     branches:
       - main
 env:
-  IMAGE_NAME: imxseraph/muxin-io:caelus
+  IMAGE_NAME: ${{ format('{0}{1}', 'docker.pkg.github.com/imxseraph/caelus/caelus:', github.sha) }}
 
 jobs:
   push:
@@ -16,13 +16,13 @@ jobs:
           submodules: 'recursive'
 
       - name: Do nothing
-        run: echo "${{ secrets.NOTHING_CONF }}" > nginx/conf.d/nothing.conf
+        run: echo '${{ secrets.NOTHING_CONF }}' > nginx/conf.d/nothing.conf
 
       - name: Build image
         run: docker build -t $IMAGE_NAME .
 
       - name: Log into registry
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u imxseraph --password-stdin
+        run: echo ${{ secrets.GITHUB_TOKEN }} | docker login https://docker.pkg.github.com -u ${{ github.repository_owner }} --password-stdin
 
       - name: Push image
         run: docker push $IMAGE_NAME
@@ -32,6 +32,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create the key
-        run: echo "${{ secrets.PRIVATE_KEY }}" > key && chmod 600 key
+        run: echo '${{ secrets.PRIVATE_KEY }}' > key && chmod 600 key
       - name: Deploy
-        run: ssh -i key -o StrictHostKeychecking=no root@us.muxin.io "cd /mnt/deploy/caelus && docker-compose down --rmi all && docker-compose up -d"
+        run: ssh -i key -o StrictHostKeychecking=no root@us.muxin.io "cd /mnt/deploy/caelus && docker pull $IMAGE_NAME && export IMAGE_NAME=$IMAGE_NAME && docker-compose down --rmi all && docker-compose up -d"
