@@ -26,6 +26,7 @@ jobs:
 
       - name: Push image
         run: docker push $IMAGE_NAME
+        
   deploy:
     needs: push
 
